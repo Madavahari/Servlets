@@ -1,0 +1,12 @@
+INDEX VERSION 1.4+C:\Users\katas\OneDrive\Desktop\servlets\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+4017589347.index
+4278501618.index
+2693435071.index
+3918071957.index
+2469439003.index
+2623309023.index
+3594791535.index
+1716419548.index
+410042801.index
+4158411681.index
+2260671077.index

@@ -1,0 +1,91 @@
+package ems;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@WebServlet(urlPatterns="/update")
+public class UpdateServlet extends HttpServlet
+{
+   @Override
+protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException 
+   {
+          	int id=Integer.parseInt(req.getParameter("id"));
+          	String name=req.getParameter("name");
+          	Double salary=Double.parseDouble(req.getParameter("salary"));
+          	int dept=Integer.parseInt(req.getParameter("dept"));
+          	
+          	try
+          	{
+          	Class.forName("com.mysql.cj.jdbc.Driver");
+          	Connection c=DriverManager.getConnection("jdbc:mysql://localhost:3306/ems?user=root&password=Root");
+          	PreparedStatement ps=c.prepareStatement("update employee set emp_name=? , emp_sal=? , dept_no=? where emp_id=?");
+          		
+          	ps.setString(1, name);
+          	ps.setDouble(2, salary);
+          	ps.setInt(3, dept);
+          	ps.setInt(4, id);
+          	
+          	int row=ps.executeUpdate();
+          	System.out.println(row+":row updated");
+          	
+          	ps.close();
+          	c.close();
+        
+          	}
+          	catch(Exception e)
+          	{
+          		e.printStackTrace();
+          	}
+          	
+          	
+          	PrintWriter pw=resp.getWriter();
+          	pw.write("<html><body><h1 id='msg'>Updated Successfully</h1></body></html>");
+          	
+          	
+          	
+          	
+          	
+          	try {
+	        	Class.forName("com.mysql.cj.jdbc.Driver");
+	        	Connection c=DriverManager.getConnection("jdbc:mysql://localhost:3306/ems?user=root&password=Root");
+	        	Statement s=c.createStatement();
+	        	
+	        	ResultSet rs=s.executeQuery("select * from employee");
+	        	
+	        	req.setAttribute("rs", rs);
+	        	RequestDispatcher rd = req.getRequestDispatcher("allemp.jsp");
+	        	rd.include(req, resp);
+	        	
+	        	while(rs.next())
+	        	{
+	        		System.out.print(rs.getInt(1)+"\t");
+	        		System.out.print(rs.getString(2)+"\t");
+	        		System.out.print(rs.getDouble(3)+"\t");
+	        		System.out.println(rs.getInt(4));
+	        		
+	        	}
+	        	
+	        	
+	     }
+	     catch(Exception e)
+	     {
+	    	 e.printStackTrace();
+	     }
+          	
+   }
+   
+   
+   
+}

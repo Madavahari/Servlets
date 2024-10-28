@@ -1,0 +1,58 @@
+<%@page import="java.sql.Connection"%>
+<%@page import="java.sql.PreparedStatement"%>
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.PrintWriter"%>
+<%@page import="java.sql.ResultSet"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>Home Page</h1>
+<%
+Connection con=null;
+PreparedStatement ps=null;
+ResultSet rs=null;
+try {
+	Class.forName("com.mysql.cj.jdbc.Driver");
+	con=DriverManager.getConnection("jdbc:mysql://localhost:3306/sms","root","root");
+	ps=con.prepareStatement("select * from student");
+	rs=ps.executeQuery();
+	
+} catch (Exception e) {
+	// TODO Auto-generated catch block
+	e.printStackTrace();
+}
+
+%>
+<table>
+<thead>
+<tr>
+<th>sid</th>
+<th>name</th>
+<th>email</th>
+<th>phoneNo</th>
+<th>username</th>
+<th>password</th>
+</tr>
+</thead>
+<%
+while(rs.next())
+	%>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

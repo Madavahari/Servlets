@@ -1,0 +1,41 @@
+<%@page import="java.sql.ResultSet"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>All EMployee Details</title>
+</head>
+<body>
+<h1>Student Details</h1>
+<table border="3" cellpadding="10" rules="all" >
+<thead style="background-color: orange">
+<tr>
+<th>sid</th>
+<th>name</th>
+<th>email</th>
+<th>phoneNo</th>
+<th>password</th>
+</tr>
+</thead>
+<%
+ResultSet rs=(ResultSet)request.getAttribute("rs");
+while(rs.next())
+{
+%>
+<tr>
+<td><%=rs.getString(1) %></td>
+<td><%=rs.getString(2) %></td>
+<td><%=rs.getString(3) %></td>
+<td><%=rs.getString(4) %></td>
+<td><%=rs.getString(5) %></td>
+</tr>
+
+<%
+}
+%>	
+</table>
+
+</body>
+</html>

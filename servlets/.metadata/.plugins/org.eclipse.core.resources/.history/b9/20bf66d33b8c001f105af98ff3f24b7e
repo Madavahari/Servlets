@@ -1,0 +1,5 @@
+package org.jsp.sms;
+
+public class LoginServlet {
+
+}

@@ -1,0 +1,11 @@
+package org.jsp.sms;
+
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+
+@WebServlet(urlPatterns = "/login",loadOnStartup = 0)
+public class LoginServlet extends HttpServlet
+{
+	
+
+}

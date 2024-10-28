@@ -1,0 +1,17 @@
+INDEX VERSION 1.134
+C:\Users\katas\OneDrive\Desktop\servlets\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1324808948.index
+\life_cycle\src\main\java
+D:\servlets\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\314750150.index
+\ems\src\main\java
+C:\Users\katas\OneDrive\Desktop\servlets\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\614342038.index
+\servletDemo\src\main\java
+C:\Users\katas\OneDrive\Desktop\servlets\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\314750150.index
+\ems\src\main\resources
+C:\Users\katas\OneDrive\Desktop\servlets\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\249194483.index
+\ems\src\main\java
+C:\Users\katas\OneDrive\Desktop\servlets\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\636036345.index
+\hms\src\main\java
+C:\Users\katas\OneDrive\Desktop\servlets\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2623309023.index
+\sms
+C:\Users\katas\OneDrive\Desktop\servlets\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2328883444.index
+\servletDemo\src\main\java
